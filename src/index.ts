@@ -7,7 +7,7 @@ class Storage {
     this.storageMethod = type === 'chrome' ? this.GOOGLE_CHROME_STORAGE : this.LOCAL_STORAGE;
   }
 
-  public set(key: string, value: string, callback: () => void) {
+  public set(key: string, value: string, callback: () => void = () => { }) {
     if (this.storageMethod === this.GOOGLE_CHROME_STORAGE) {
       chrome.storage.sync.set(
         {
@@ -21,7 +21,7 @@ class Storage {
     }
   }
 
-  public get(keys: string | string[], callback: (arg: any) => void): void {
+  public get(keys: string | string[], callback: (arg: any) => void = (arg) => { }): void {
     if (this.storageMethod === this.GOOGLE_CHROME_STORAGE) {
       chrome.storage.sync.get(keys, callback);
     } else {
@@ -35,7 +35,7 @@ class Storage {
     }
   }
 
-  public remove(keys: string | string[], callback: () => void): void {
+  public remove(keys: string | string[], callback: () => void = () => { }): void {
     if (this.storageMethod === this.GOOGLE_CHROME_STORAGE) {
       chrome.storage.sync.remove(keys, callback);
     } else {
@@ -48,7 +48,7 @@ class Storage {
     }
   }
 
-  public clear(callback: () => void): void {
+  public clear(callback: () => void = () => { }): void {
     if (this.storageMethod === this.GOOGLE_CHROME_STORAGE) {
       chrome.storage.sync.clear(callback);
     } else {
