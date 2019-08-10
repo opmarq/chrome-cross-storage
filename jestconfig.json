@@ -3,6 +3,16 @@
     "^.+\\.(t|j)sx?$": "ts-jest"
   },
   "testRegex": "(/src/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-  "setupFiles": ["jest-localstorage-mock"]
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "setupFiles": [
+    "jest-localstorage-mock",
+    "jest-webextension-mock"
+  ]
 }
