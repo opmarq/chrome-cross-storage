@@ -2,7 +2,7 @@
   "name": "chrome-cross-storage",
   "version": "1.0.0",
   "description": "Google chrome storage and localStorage wrapper which help users debug google chrome application which depends on the storage as simple web apps",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -11,7 +11,12 @@
     "coverage": "jest --coverage --config jestconfig.json",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
-  "keywords": [],
+  "keywords": [
+    "google chrome",
+    "chrome extension",
+    "chrome storage",
+    "localStorage"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
